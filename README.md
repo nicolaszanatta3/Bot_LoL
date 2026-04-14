@@ -103,9 +103,15 @@ python bot.py
 | Canal | Uso |
 |---|---|
 | `🏠 Lobby` | Onde os jogadores ficam antes do sorteio |
+<<<<<<< HEAD
 | `🏳️Time 1 - 3x3` / `🏴Time 2 - 3x3` | Partidas 3v3 |
 | `🏳️Time 1 - 4x4` / `🏴Time 2 - 4x4` | Partidas 4v4 |
 | `🏳️Time 1 - 5x5` / `🏴Time 2 - 5x5` | Partidas 5v5 |
+=======
+| `🏳️ Time 1 - 3x3` / `🏴 Time 2 - 3x3` | Partidas 3v3 |
+| `🏳️ Time 1 - 4x4` / `🏴 Time 2 - 4x4` | Partidas 4v4 |
+| `🏳️ Time 1 - 5x5` / `🏴 Time 2 - 5x5` | Partidas 5v5 |
+>>>>>>> 100af19 (projeto semi-finalizado)
 | `escalação` *(texto)* | Canal onde o resultado é enviado |
 
 > Os nomes precisam ser **exatos**, incluindo os emojis.
@@ -147,4 +153,8 @@ Em **Bot → Privileged Gateway Intents**:
     ├── formatacao.py       # Discord Embeds
     ├── balanceamento.py    # Algoritmo de balanceamento por MMR
     └── riot.py             # Riot Games API
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 100af19 (projeto semi-finalizado)
