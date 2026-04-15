@@ -8,9 +8,12 @@ def embed_rift(data: dict, tamanho: str, mmr_diff: int | None = None) -> discord
         color=COR_ESCALACAO,
     )
 
+    # Mostra só as rotas que existem no JSON retornado pela IA
     t1_linhas = []
     for rota, display in ROTAS_DISPLAY.items():
-        info    = data['time1'].get(rota, {})
+        info    = data['time1'].get(rota)
+        if not info:
+            continue
         jogador = info.get('jogador', 'vazio')
         coment  = info.get('comentario', '')
         if jogador != 'vazio':
@@ -18,7 +21,9 @@ def embed_rift(data: dict, tamanho: str, mmr_diff: int | None = None) -> discord
 
     t2_linhas = []
     for rota, display in ROTAS_DISPLAY.items():
-        info    = data['time2'].get(rota, {})
+        info    = data['time2'].get(rota)
+        if not info:
+            continue
         jogador = info.get('jogador', 'vazio')
         coment  = info.get('comentario', '')
         if jogador != 'vazio':
@@ -88,20 +93,22 @@ def embed_rank(discord_nome: str, riot_id: str, rank_info: dict) -> discord.Embe
 
 
 def embed_serie(sorteio: dict, serie: dict, fearless: dict | None = None) -> discord.Embed:
-    t1_wins = serie.get('time1_wins', 0)
-    t2_wins = serie.get('time2_wins', 0)
-    jogos   = serie.get('jogos', 0)
+    t1_wins     = serie.get('time1_wins', 0)
+    t2_wins     = serie.get('time2_wins', 0)
+    jogos       = serie.get('jogos', 0)
+    formato     = serie.get('formato', 'MD3')
+    wins_needed = serie.get('wins_needed', 2)
 
     # Cor muda conforme quem está vencendo
     if t1_wins > t2_wins:
-        cor = 0x3498DB   # azul — Time 1 na frente
+        cor = 0x3498DB
     elif t2_wins > t1_wins:
-        cor = 0xE74C3C   # vermelho — Time 2 na frente
+        cor = 0xE74C3C
     else:
-        cor = COR_ESCALACAO  # empate
+        cor = COR_ESCALACAO
 
     embed = discord.Embed(
-        title=f'⚔️  SÉRIE  ·  Jogo {jogos + 1}',
+        title=f'⚔️  SÉRIE {formato}  ·  Jogo {jogos + 1}  ·  (melhor de {wins_needed * 2 - 1})',
         color=cor,
     )
 
