@@ -103,13 +103,13 @@ python bot.py
 | Canal | Uso |
 |---|---|
 | `🏠 Lobby` | Onde os jogadores ficam antes do sorteio |
-
+|---|---|
 | `🏳️Time 1 - 3x3` / `🏴Time 2 - 3x3` | Partidas 3v3 |
-
+|---|---|
 | `🏳️Time 1 - 4x4` / `🏴Time 2 - 4x4` | Partidas 4v4 |
-
+|---|---|
 | `🏳️Time 1 - 5x5` / `🏴Time 2 - 5x5` | Partidas 5v5 |
-
+|---|---|
 | `escalação` *(texto)* | Canal onde o resultado é enviado |
 
 > Os nomes precisam ser **exatos**, incluindo os emojis.
