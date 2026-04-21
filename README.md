@@ -147,8 +147,4 @@ Em **Bot → Privileged Gateway Intents**:
     ├── formatacao.py       # Discord Embeds
     ├── balanceamento.py    # Algoritmo de balanceamento por MMR
     └── riot.py             # Riot Games API
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 100af19 (projeto semi-finalizado)
